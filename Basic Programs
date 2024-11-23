@@ -1,0 +1,42 @@
+// WAP to swap 2 numbers.
+#include <stdio.h>
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+int main() {
+    int a = 5;
+    int b = 4;
+    printf("%d %d\n", a, b);
+    
+    // This method [Using a Temporary Variable] uses an extra variable to hold one value temporarily while swapping.
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+    printf("%d %d\n", a, b);
+    
+    // This method [Using Arithmetic Operations (Addition and Subtraction)] swaps numbers without using extra memory and without the constraints of arithmetic operations.
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("%d %d\n", a, b);
+    
+    // This method [Using Arithmetic Operations (Multiplication and Division)] works only if a and b are not zero and are integers.
+    a = a * b;
+    b = a / b;
+    a = a / b;
+    printf("%d %d\n", a, b);
+    
+    // This method [Using XOR Operation] swaps numbers without using extra memory and without the constraints of arithmetic operations.
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    printf("%d %d\n", a, b);
+    
+    // [Using a Function] Useful for modular code. 
+    swap(&a, &b);
+    printf("%d %d", a, b);
+    return 0;
+}
